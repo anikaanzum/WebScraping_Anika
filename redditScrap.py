@@ -1,4 +1,4 @@
-
+# This is a basic code to fetch metadata from reddit search results 
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
