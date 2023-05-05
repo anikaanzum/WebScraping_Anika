@@ -19,7 +19,7 @@ def SendRequest(url):
 
 	return page
 
-
+# python argument pass
 arg=sys.argv[1]
 
 main_url='https://www.reddit.com'
@@ -32,7 +32,7 @@ url = main_url+sub_url+query
 page=SendRequest(url)
 soup = BeautifulSoup(page.content, 'html.parser')
 
-
+# fetch titles and links of the posts
 titleList = soup.find_all('div', attrs={'class': '_2n04GrCyhhQf-Kshn7akmH _19FzInkloQSdrf0rh3Omen'})
 
 postTitles=[]
@@ -46,6 +46,7 @@ for i in titleList:
 	postTitles.append(i.find('h3').text)
 	postLinks.append(main_url+i.find('a', href=True)['href'])
 
+# fetch like comment count from each post
 reactionList = soup.find_all('span', attrs={'class': '_vaFo96phV6L5Hltvwcox'})
 
 
@@ -67,6 +68,7 @@ dict = {'title': postTitles, 'link': postLinks, 'like': upvotes, 'comment': comm
 df = pd.DataFrame(dict)
 print(df)
 
+# save data to csv file
 df.to_csv(query+'.csv')
 
 	
