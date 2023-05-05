@@ -1,4 +1,5 @@
-
+# This code tries to scrap comments from reddit posts and analyze public sentiment 
+# but this is not a successful code as we need Reddit python API to do comment extract and analysis
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
