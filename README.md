@@ -12,7 +12,7 @@ We started webscraping using `requests` python library. However, Congress.gov si
 Here is the [Python example](https://github.com/LibraryOfCongress/api.congress.gov/tree/main/api_client/python). 
 
 
-### Selenium
+### [Selenium](https://pythonbasics.org/selenium-firefox/)
 
 We also used `selenium` to scrap data from congress.gov. 
 
